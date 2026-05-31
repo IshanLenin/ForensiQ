@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from os import getenv
 
 # Format: postgresql://<user>:<password>@<host>:<port>/<database_name>
-SQLALCHEMY_DATABASE_URL = "postgresql://admin:securepassword123@127.0.0.1:5433/forensics_app"
+SQLALCHEMY_DATABASE_URL = getenv('DATABASE_URL')
 
 # The engine is the core interface to the database. 
 # It handles the underlying connection pool to Postgres.
